@@ -57,7 +57,7 @@ export default async function handler(req, res) {
         token,
         email,
         status: "active",
-        expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // válido 7 días
+        expires_at:  null  // 👈 dejamos vacío al inicio
       })
       .select();
 
@@ -113,3 +113,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: e.message });
   }
 }
+
