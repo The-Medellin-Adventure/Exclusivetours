@@ -1,0 +1,17 @@
+{
+  "name": "citytour360",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Proyecto con Bold webhook y acceso temporal usando Supabase",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"no build step\"",
+    "start": "echo \"no start step\""
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "@sendgrid/mail": "^7.7.0",
+    "nanoid": "^4.0.2",
+    "nodemailer": "^6.9.8"
+  }
+}
