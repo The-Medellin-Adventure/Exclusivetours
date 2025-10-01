@@ -277,7 +277,7 @@ var source = Marzipano.ImageUrlSource.fromString(
   "7-alpujarra": `/api/signed-url?token=${window.token}&file=videos/video8.mp4`,
   "8-transicin-ciudad-a-naturaleza": `/api/signed-url?token=${window.token}&file=videos/video9.mp4`,
   "9-pies_descalzos": `/api/signed-url?token=${window.token}&file=videos/video10.mp4`,
-  "10-conexin-naturaleza": `/api/signed-url?token=${window.token}&file=videos/video11.mp4`,
+  "10-conexion-naturaleza": `/api/signed-url?token=${window.token}&file=videos/video11.mp4`,
   "11-laberinto-de-bamb": `/api/signed-url?token=${window.token}&file=videos/video12.mp4`,
   "12-edificio-inteligente-epm": `/api/signed-url?token=${window.token}&file=videos/video13.mp4`,
   "13-centro-de-convenciones-y-teatro": `/api/signed-url?token=${window.token}&file=videos/video14.mp4`,
