@@ -20,7 +20,7 @@ const FIRST_SCENE_ID = "0-plaza-botero-botero";
 // Verificación temprana del token
 // =========================
 if (window.token) {
-  fetch(`https://citytour360.vercel.app/api/verify-token?token=${window.token}`, { headers: { Accept: "application/json" } })
+  fetch(`https://exclusivetours.vercel.app/api/verify-token?token=${window.token}`, { headers: { Accept: "application/json" } })
     .then(async res => {
       const data = await res.json().catch(() => ({}));
       console.log("🔎 VERIFY-TOKEN RESPUESTA:", res.status, JSON.stringify(data, null, 2));
