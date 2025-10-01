@@ -86,45 +86,6 @@
   }
 }
 
-/* Tarjeta independiente de TecnoParque */
-#tecnoparque-card {
-  position: fixed;
-  top: 350px;   /* debajo del título y menú */
-  left: 20px;
-  width: 260px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 13px;
-  color: #f0f0f0;
-  z-index: 400;
-}
-
-#tecnoparque-card img {
-  width: 80%;
-  margin-top: 5px;
-}
-
-.tecnoparque-texto {
-  margin: 0;
-  font-size: 14px;
-  color: #ffffff;
-}
-
-/* Ajuste responsive */
-@media (max-width: 600px) {
-  #tecnoparque-card {
-    top: 400px;
-    left: 10px;
-    width: 160px;
-    font-size: 11px;
-  }
-  #tecnoparque-card img {
-    width: 70%;
-  }
-}
-
 /* Tarjeta flotante para video vertical */
 #videoCard {
   position: fixed;
@@ -588,7 +549,7 @@
 <!-- Menú escenas -->
 <div id="sceneList">
 <h2 style="color:white; text-align:center; padding:10px; font-size:18px; background:rgba(0,0,0,0.6);">
-  🌆 Medellín 360°: Vive la Ciudad
+  🌆 Medellín Virtual 360°
 </h2>
   <ul class="scenes">
     
@@ -632,7 +593,7 @@
         <li class="text">Pies Descalzos</li>
       </a>
     
-      <a href="javascript:void(0)" class="scene" data-id="10-conexin-naturaleza">
+      <a href="javascript:void(0)" class="scene" data-id="10-conexion-naturaleza">
         <li class="text">Conexión Naturaleza</li>
       </a>
     
@@ -666,12 +627,6 @@
   </div>
 
 </ul>
-</div>
-
-<!-- Tarjeta TecnoParque -->
-<div id="tecnoparque-card">
-  <p class="tecnoparque-texto">🌎 Proyecto avalado por</p>
-  <img src="img/tecno.png" alt="Logo TecnoParque">
 </div>
 
 <!-- Botones de Marzipano (play, fullscreen, etc.) -->
@@ -779,11 +734,6 @@
 <!-- Icono flotante cuando el video está cerrado -->
 <div id="videoIcon" style="display: none;">🎥</div>
 
-
-
-
-
-
 <!-- Marca de agua centrada -->
 <div id="watermark-bg">
   <img src="img/logo.png" alt="The Medellin Adventure">
@@ -793,12 +743,8 @@
 <div id="watermark-footer">
   <img src="img/logo.png" alt="The Medellin Adventure">
   <div class="watermark-text">
-    <span>The Medellin Adventure Tour Operador</span>
-<a href="https://themedellinadventure-com.webnode.com.co/" 
-   target="_blank" 
-   style="color: white; text-decoration: underline;">
-  https://themedellinadventure-com.webnode.com.co/
-</a>
+    <span>Exclusive Tours Colombia</span>
+    <span>Proyecto Elaborado por The Medellin Adventure</span>
     <a href="https://wa.me/573247615677?text=Hola,%20quiero%20conocer%20más%20tours" target="_blank" id="whatsappLink">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">+57 324 761 5677
     </a>     
