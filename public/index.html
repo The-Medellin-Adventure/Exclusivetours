@@ -345,25 +345,33 @@
 
 /* Menú de escenas */
 #sceneList {
-  background: rgba(0,0,0,0.65);
+  position: fixed;
+  top: 70px;                 /* debajo de la barra de título */
+  left: 20px;
+  z-index: 500;
+  width: 260px;              /* un poco más angosto */
+  max-height: 45vh;          /* más corto: no pasa de 45% de la pantalla */
+  overflow-y: auto;          /* scroll si hay muchas escenas */
+  background: rgba(255, 255, 0, 0.25); /* amarillo translúcido suave */
   border-radius: 10px;
   padding: 8px 10px;
-  margin-top: 10px;
   font-size: 14px;
-  color: black;
-  width: clamp(220px, 25vw, 280px); /* se adapta a la pantalla */
-  max-height: 40vh;                /* nunca ocupa más de media pantalla */
-  overflow-y: auto;                /* scroll si hay muchas escenas */
-}
-#sceneList ul { list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#sceneList li { margin-bottom: 5px;
-  cursor: pointer;
+  color: #000;               /* texto negro global */
 }
 
+/* Escena activa */
+#sceneList .scene.current {
+  background: rgba(0, 0, 255, 0.2); /* azul tenue */
+  border-radius: 8px;
+}
 
+/* Hover de escena */
+#sceneList .scene:hover {
+  background: rgba(255, 255, 0, 0.2); /* amarillo suave */
+  border-radius: 8px;
+}
+
+/* Contenedor de lista */
 #sceneList .scenes {
   display: flex !important;
   flex-direction: column !important;
@@ -381,7 +389,19 @@
   display: block !important;
   padding: 8px 10px !important;
   border-radius: 8px !important;
-  background: rgba(255,255,255,0.08) !important;
+  background: rgba(255, 255, 153, 0.3) !important; /* amarillo claro translúcido */
+  color: #000 !important; /* texto negro legible */
+}
+
+/* ==== Versión móvil ==== */
+@media (max-width: 600px) {
+  #sceneList {
+    top: 70px;
+    left: 10px;
+    width: 90vw;
+    max-height: 40vh;   /* más corto en móviles */
+    overflow-y: auto;
+  }
 }
 
 
