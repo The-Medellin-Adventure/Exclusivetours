@@ -91,11 +91,11 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: clamp(200px, 22vw, 320px);
+  width: clamp(180px, 18vw, 250px); /* 🔹 más compacto */
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  background: rgba(0,0,0,0.75);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.7);
   z-index: 9999;
 
   /* Oculto por defecto con transición */
@@ -350,9 +350,9 @@
   padding: 8px 10px;
   margin-top: 10px;
   font-size: 14px;
-  color: white;
+  color: black;
   width: clamp(220px, 25vw, 280px); /* se adapta a la pantalla */
-  max-height: 50vh;                /* nunca ocupa más de media pantalla */
+  max-height: 40vh;                /* nunca ocupa más de media pantalla */
   overflow-y: auto;                /* scroll si hay muchas escenas */
 }
 #sceneList ul { list-style: none;
