@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://exclusivetours.vercel.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:;">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tour - listo para ofuscar</title>
+  <link rel="stylesheet" href="style.min.css">
+</head>
+<body>
+  <div id="pano"></div>
+
+  <!-- UI placeholders (keep IDs expected by the scripts) -->
+  <div id="titleBar"><div class="sceneName" id="sceneTitle"></div></div>
+  <div id="sceneList"></div>
+
+  <!-- Video & overlays expected by your JS -->
+  <div id="videoCard" style="display:none;">
+    <video id="sceneVideo" playsinline webkit-playsinline></video>
+    <button id="playPauseBtn">▶</button>
+    <button id="muteBtn">🔊</button>
+    <button id="closeVideoCard">✖</button>
+  </div>
+  <div id="videoIcon" style="display:none;cursor:pointer;">🎬</div>
+
+  <!-- Carrusel modal -->
+  <div id="carruselContainer" style="display:none;">
+    <div id="carrusel" class="carrusel-swiper">
+      <div class="swiper-wrapper"></div>
+    </div>
+    <button id="cerrarCarrusel">Cerrar</button>
+  </div>
+
+  <!-- Big video overlay -->
+  <div id="bigVideoOverlay" style="display:none;">
+    <video id="bigSceneVideo" playsinline webkit-playsinline></video>
+    <button id="bigPlayPauseBtn">⏯</button>
+    <button id="bigMuteBtn">🔊</button>
+    <button id="bigCloseBtn">✖</button>
+  </div>
+  <div id="bigVideoBackdrop" style="display:none;"></div>
+
+  <!-- Error overlay -->
+  <div id="errorOverlay" style="display:none;position:fixed;inset:0;align-items:center;justify-content:center;"></div>
+
+  <!-- Data & libs -->
+  <script src="data.min.js"></script>
+  <script src="app.min.js"></script>
+</body>
+</html>
