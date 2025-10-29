@@ -759,4 +759,74 @@ var zoomSpeed = 1;
   // Si no es mobile, mostramos la lista (pero switchScene la ocultará si no es la primera escena)
   if (!document.body.classList.contains('mobile')) showSceneList();
 
+  
+  // INTEGRACIÓN REAL: Movimiento 360 con giroscopio
+  // Solo activa en móviles usando bowser
+  // =========================
+if (bowser.mobile) {
+  let basePitch = null;
+  let baseYaw = null;
+
+  // Detecta la rotación de la pantalla para calibrar giroscopio
+  function getScreenOrientationAngle() {
+    if (window.screen.orientation && typeof window.screen.orientation.angle === 'number') {
+      return window.screen.orientation.angle;
+    }
+    return 0; // fallback si no existe
+  }
+
+  window.addEventListener('deviceorientation', function (event) {
+    let yaw = event.alpha ? event.alpha * Math.PI / 180 : 0;
+    let pitch = event.beta ? event.beta * Math.PI / 180 : 0;
+
+    // Ajuste según la orientación de la pantalla
+    const screenAngleRad = getScreenOrientationAngle() * Math.PI / 180;
+
+    // Calibrar valores basados en la rotación de pantalla
+    // Esto es una aproximación, dependiendo del dispositivo y navegador puede variar
+    let adjustedYaw = yaw;
+    let adjustedPitch = pitch;
+
+    if (screenAngleRad === Math.PI / 2) { // 90°
+      adjustedYaw = pitch;
+      adjustedPitch = -yaw;
+    } else if (screenAngleRad === -Math.PI / 2 || screenAngleRad === 270 * Math.PI / 180) { // 270°
+      adjustedYaw = -pitch;
+      adjustedPitch = yaw;
+    } else if (screenAngleRad === Math.PI) { // 180°
+      adjustedYaw = -yaw;
+      adjustedPitch = -pitch;
+    }
+
+    if (basePitch === null) {
+      basePitch = adjustedPitch;
+      baseYaw = adjustedYaw;
+    }
+
+    if (activeView) {
+      activeView.setYaw(-(adjustedYaw - baseYaw));  // movimiento sentido horizontal
+      activeView.setPitch(-(adjustedPitch - basePitch));  // movimiento sentido vertical
+    }
+  }, true);
+}
+
+  // =========================
+  // Prevención de copia y descarga sencilla
+  // =========================
+
+  // Bloquear clic derecho
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  // Bloquear selección de texto
+  document.addEventListener('selectstart', e => e.preventDefault());
+
+  // Bloquear algunos atajos comunes para copiar, guardar, inspeccionar
+  document.addEventListener('keydown', e => {
+    if (
+      e.key === 'F12' || // Abrir consola
+      (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u')) // Ctrl+C, Ctrl+S, Ctrl+U
+    ) {
+      e.preventDefault();
+    }
+  });
 })();
